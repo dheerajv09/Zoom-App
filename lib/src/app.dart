@@ -6,15 +6,10 @@ import 'package:zoom_app/src/screens/login_screen.dart';
 import 'package:zoom_app/src/screens/video_call_screen.dart';
 import 'package:zoom_app/src/utils/colors.dart';
 
-import 'settings/settings_controller.dart';
-
 class MyApp extends StatelessWidget {
   const MyApp({
     Key? key,
-    required this.settingsController,
   }) : super(key: key);
-
-  final SettingsController settingsController;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +21,6 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
       ),
       darkTheme: ThemeData.dark(),
-      themeMode: settingsController.themeMode,
       routes: {
         '/login': (context) => const LoginScreen(),
         '/home': (context) => HomeScreen(),
